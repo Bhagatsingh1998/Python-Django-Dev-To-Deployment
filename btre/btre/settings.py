@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'listings.apps.ListingsConfig',
+    'realtors.apps.RealtorsConfig',
+    'pages.apps.PagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +57,7 @@ ROOT_URLCONF = 'btre.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, '../myTemplates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,10 +76,20 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    'default' : {
+        'ENGINE' : 'django.db.backends.postgresql',
+        'NAME' : 'btre',
+        'USER' : 'postgres',
+        'PASSWORD' : 'root',
+        'HOST' : 'localhost'
     }
 }
 
@@ -117,4 +130,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, ',static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'btre/mystatic')
+]
 STATIC_URL = '/static/'
