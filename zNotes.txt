@@ -1,0 +1,42 @@
+// 1.
+creating the virtual environment
+  python3 -m venv tutorial-env
+
+activating virtual environment
+  windows: tutorial-env\Scripts\activate.bat 
+  linux: source tutorial-env/bin/activate
+
+install latest version of django
+  pip install django
+
+install specific version of django
+  pip install Django==<versionNumber>
+  pip install Django==1.0.4
+
+checking the version of django
+  py -m django --version
+
+checking the version of python
+  py --version
+
+after installing django, we get  
+django-admin : main command 
+  it has lots of subcommands which we see by running django-admin
+
+start/create the project
+  django-admin startptoject <projectName>
+  django-admin startptoject blog
+
+  it creates a folder(with the same name as that of project) and manage.py file
+  manage.py: helps to run the project
+  folder(utube):
+    __init__.py : its an empty file which tells python that its a python package
+    settings.py :  helps us to change the different setting and confifrations
+    urls.py : mapping up certin urls (admin rount is present bydefault)
+    wsgi.py : it manages how oue python web applaiction and web server communicates. so its has simple default wsgi configration
+
+runing the sever to run our webiste
+  python manage.py runserver
+    manage.py : file which we are running
+    runserver : subcommand
+
