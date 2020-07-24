@@ -40,3 +40,11 @@ runing the sever to run our webiste
     manage.py : file which we are running
     runserver : subcommand
 
+
+requirements.txt
+  its a file which will contain all our PIP(Pip Installs Packages) packages.
+  to fill up the requirements.txt file
+    pip freeze > requirements.txt
+  to download the all the packages at once when startingthe project. just run
+    pip install -r requirements.txt 
+
