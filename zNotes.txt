@@ -1,3 +1,16 @@
+// 2.
+every section is in website can be categorized into app. thus a single project can contain multiple apps
+thus, seprating our code and an app can be added to some other  project also
+
+start/create an app
+  py manage.py startapp <appName>
+  py manage.py startapp blogApp
+
+blogApp/views
+blogApp/urls
+blog/urls
+
+
 // 1.
 creating the virtual environment
   python3 -m venv tutorial-env
